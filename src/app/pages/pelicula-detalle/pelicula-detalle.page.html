@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/tabs/peliculas" text=""></ion-back-button>
+        </ion-buttons>
+        <ion-title>{{ peli?.Title }}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card *ngIf="peli" class="peli-card">
+        <ion-img [src]="peli.Poster"></ion-img>
+        <ion-card-content class="peli-info">
+            {{ peli.Plot }}
+        </ion-card-content>
+    </ion-card>
+</ion-content>
