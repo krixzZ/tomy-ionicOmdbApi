@@ -5,8 +5,17 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-input inputmode="text" placeholder="Ingrese nombre de película"></ion-input>
-    <ion-button expand="full" (click)="buscaPelis()">Buscar Pelis</ion-button>
+    <ion-input class="peli-buscar" inputmode="text" placeholder="Ingrese nombre de película" #input_buscarpeli>
+    </ion-input>
+    <ion-button color="secondary" icon-start fill="outline" size="small" (click)="buscaPelis()">
+        <ion-icon name="search"></ion-icon>
+        Buscar Peli
+    </ion-button>
+    <ion-button color="secondary" icon-start fill="outline" size="small" (click)="reset()">
+        <ion-icon name="refresh"></ion-icon>
+        Refresh
+    </ion-button>
+    <!-- <ion-button expand="full" (click)="buscaPelis()">Buscar Pelis</ion-button> -->
 
     <ion-list>
         <ion-item button detail lines="inset" *ngFor="let peli of (pelis | async)?.Search" (click)="abrirDetalle(peli)">

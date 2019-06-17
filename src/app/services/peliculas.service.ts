@@ -6,12 +6,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PeliculasService {
 
-  name = 'matrix';
-
   constructor(private http: HttpClient) { }
 
-  getPelis() {
-    return this.http.get(`http://www.omdbapi.com/?apikey=9594d591&s=${this.name}`);
+  getPelis(i_value) {
+    return this.http.get(`http://www.omdbapi.com/?apikey=9594d591&s=${i_value}`);
   }
 
   getPeli(id) {
